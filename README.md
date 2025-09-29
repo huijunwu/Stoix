@@ -161,7 +161,10 @@ Stoix makes use of Hydra for config management. In order to see our default syst
 ```bash
 python stoix/systems/ppo/anakin/ff_ppo.py env=gymnax/cartpole system.rollout_length=32 system.decay_learning_rates=True
 
-python stoix/systems/ppo/anakin/ff_ppo.py env=jumanji/snake
+python stoix/systems/ppo/anakin/ff_ppo.py \
+    env=jumanji/snake \
+    logger.checkpointing.save_model=true \
+    logger.checkpointing.save_args.checkpoint_uid=my_snake_ppo_model
 ```
 
 Additionally, certain implementations such as Dueling DQN are decided by the network architecture but the underlying algorithm stays the same. For example, if you wanted to run Dueling DQN you would simply do:
