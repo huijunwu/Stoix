@@ -11,20 +11,28 @@ from omegaconf import DictConfig
 from stoa import (
     AddStartFlagAndPrevAction,
     AutoResetWrapper,
-    BraxToStoa,
+    # BraxToStoa,
     Environment,
     EpisodeStepLimitWrapper,
-    GymnaxToStoa,
-    JumanjiToStoa,
-    KinetixToStoa,
-    MuJoCoPlaygroundToStoa,
+    # GymnaxToStoa,
+    # JumanjiToStoa,
+    # KinetixToStoa,
+    # MuJoCoPlaygroundToStoa,
     MultiDiscreteSpace,
     MultiDiscreteToDiscreteWrapper,
-    NavixToStoa,
+    # NavixToStoa,
     ObservationExtractWrapper,
     RecordEpisodeMetrics,
-    XMiniGridToStoa,
+    # XMiniGridToStoa,
 )
+from stoa.env_adapters.brax import BraxToStoa
+from stoa.env_adapters.gymnax import GymnaxToStoa
+from stoa.env_adapters.jumanji import JumanjiToStoa
+from stoa.env_adapters.kinetix import KinetixToStoa
+from stoa.env_adapters.playground import MuJoCoPlaygroundToStoa
+from stoa.env_adapters.navix import NavixToStoa
+from stoa.env_adapters.xminigrid import XMiniGridToStoa
+
 from stoa.core_wrappers.auto_reset import CachedAutoResetWrapper
 from stoa.core_wrappers.optimistic_auto_reset import OptimisticResetVmapWrapper
 from stoa.core_wrappers.vmap import VmapWrapper

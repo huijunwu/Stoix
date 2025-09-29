@@ -130,6 +130,11 @@ pipx install uv
 uv venv
 source .venv/bin/activate
 uv sync
+
+uv pip install --upgrade "jax[cuda12]"==0.5.3
+python -c "import jax; print(jax.default_backend())"
+
+uv pip install --upgrade envpool
 ```
 
 We have tested `Stoix` on Python 3.10. Note that because the installation of JAX differs depending on your hardware accelerator,
@@ -155,6 +160,8 @@ Stoix makes use of Hydra for config management. In order to see our default syst
 
 ```bash
 python stoix/systems/ppo/anakin/ff_ppo.py env=gymnax/cartpole system.rollout_length=32 system.decay_learning_rates=True
+
+python stoix/systems/ppo/anakin/ff_ppo.py env=jumanji/snake
 ```
 
 Additionally, certain implementations such as Dueling DQN are decided by the network architecture but the underlying algorithm stays the same. For example, if you wanted to run Dueling DQN you would simply do:
