@@ -199,7 +199,7 @@ class Checkpointer:
         # We want to ensure `major` versions match, but allow `minor` versions to differ
         # i.e. v0.1 and 0.2 are compatible, but v1.0 and v2.0 are not
         # Any breaking API changes should be reflected in the major version
-        assert (self._manager.metadata()["checkpointer_version"] // 1) == (
+        assert (self.get_cfg().custom_metadata["checkpointer_version"] // 1) == (
             CHECKPOINTER_VERSION // 1
         ), "Loaded checkpoint was created with a different major version of the checkpointer."
 
