@@ -16,6 +16,9 @@ echo "Running Jumanji environment test..."
 # Ensure the necessary backend libraries are installed on your system.
 export MPLBACKEND=TkAgg
 
+# uv pip install PyQt5
+# export MPLBACKEND=QtAgg
+
 python examples/jumanji_env_test.py
 
 echo "Jumanji environment test finished."
