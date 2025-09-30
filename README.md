@@ -127,13 +127,12 @@ You can use Stoix by cloning the repo and installing via UV as follows:
 git clone https://github.com/EdanToledo/Stoix.git
 cd Stoix
 pipx install uv
-uv venv --python python3.11
+uv venv --python python3.10
 uv pip install .
 source .venv/bin/activate
 # uv sync
 
-uv pip install --upgrade "jax[cuda12]"
-==0.5.3
+uv pip install --upgrade "jax[cuda12]"==0.5.3
 python -c "import jax; print(jax.default_backend())"
 
 uv pip install --upgrade envpool
